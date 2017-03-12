@@ -1,0 +1,30 @@
+ul {
+  width: 280px;
+  margin-top: -4px;
+}
+ul li {
+  position: relative;
+  display: block;
+  height: 40px;
+  margin-top: 4px;
+  padding-left: 15px;
+	list-style: none;
+  font-size: 14px;
+  color: #555;
+  line-height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  cursor: pointer;
+	overflow: hidden;
+}
+ul li:hover {
+  border-color: #346aff;
+}
+span.ripple-effect {
+  position: absolute;
+	display: block;
+	border-radius: 100%;
+  background-color: rgba(51, 105, 255, 0.5);
+  opacity: 0;
+}
