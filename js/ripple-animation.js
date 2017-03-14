@@ -1,30 +1,30 @@
 'use strict';
 
 $.fn.rippleEffect = function(options) {
-	var $this = $(this),
-  	options = $.extend({}, options),
-  	rippleWidth = Math.max($this.outerWidth(), $this.outerHeight()),
-  	rippleElClass = 'ripple-effect';
+  var $this = $(this),
+    options = $.extend({}, options),
+    rippleWidth = Math.max($this.outerWidth(), $this.outerHeight()),
+    rippleElClass = 'ripple-effect';
 
   $this.prepend(
-  	$('<span>')
-    	.addClass(rippleElClass)
+    $('<span>')
+      .addClass(rippleElClass)
   );
 
   $this.on('click', function(event) {
-  	var $this = $(this),
-    	$rippleEl = $this.children('span.' + rippleElClass),
+    var $this = $(this),
+      $rippleEl = $this.children('span.' + rippleElClass),
       offset = $this.offset(),
       css = {
         width: 0,
         height: 0,
-      	left: event.pageX - offset.left,
+        left: event.pageX - offset.left,
         top: event.pageY - offset.top,
         opacity: 1
-			};
+      };
 
     $rippleEl
-    	.stop()
+      .stop()
       .css(css)
       .animate({
         width: rippleWidth * 2,
@@ -33,15 +33,15 @@ $.fn.rippleEffect = function(options) {
         top: css.top - rippleWidth,
         opacity: 0
       }, 400, function() {
-      	options.doneTrigger &&
-					$this.trigger('doneRippleAnimation');
+        options.doneTrigger &&
+          $this.trigger('doneRippleAnimation');
       });
 
     event.stopPropagation();
   });
 
   $this.on('doneRippleAnimation', function() {
-		console.log('Done');
+    console.log('Done');
   });
 
   return $this;

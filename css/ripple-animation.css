@@ -8,7 +8,7 @@ ul li {
   height: 40px;
   margin-top: 4px;
   padding-left: 15px;
-	list-style: none;
+  list-style: none;
   font-size: 14px;
   color: #555;
   line-height: 40px;
@@ -16,15 +16,15 @@ ul li {
   border: 1px solid #eee;
   border-radius: 2px;
   cursor: pointer;
-	overflow: hidden;
+  overflow: hidden;
 }
 ul li:hover {
   border-color: #346aff;
 }
 span.ripple-effect {
   position: absolute;
-	display: block;
-	border-radius: 100%;
+  display: block;
+  border-radius: 100%;
   background-color: rgba(51, 105, 255, 0.5);
   opacity: 0;
 }
